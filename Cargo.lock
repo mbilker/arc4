@@ -2,34 +2,32 @@
 # It is not intended for manual editing.
 [[package]]
 name = "arc4"
-version = "0.1.0"
+version = "0.2.0"
 dependencies = [
- "hex-literal 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hex-literal",
 ]
 
 [[package]]
 name = "hex-literal"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "961de220ec9a91af2e1e5bd80d02109155695e516771762381ef8581317066e0"
 dependencies = [
- "hex-literal-impl 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "proc-macro-hack 0.5.14 (registry+https://github.com/rust-lang/crates.io-index)",
+ "hex-literal-impl",
+ "proc-macro-hack",
 ]
 
 [[package]]
 name = "hex-literal-impl"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "853f769599eb31de176303197b7ba4973299c38c7a7604a6bc88c3eef05b9b46"
 dependencies = [
- "proc-macro-hack 0.5.14 (registry+https://github.com/rust-lang/crates.io-index)",
+ "proc-macro-hack",
 ]
 
 [[package]]
 name = "proc-macro-hack"
-version = "0.5.14"
+version = "0.5.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[metadata]
-"checksum hex-literal 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "961de220ec9a91af2e1e5bd80d02109155695e516771762381ef8581317066e0"
-"checksum hex-literal-impl 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "9d4c5c844e2fee0bf673d54c2c177f1713b3d2af2ff6e666b49cb7572e6cf42d"
-"checksum proc-macro-hack 0.5.14 (registry+https://github.com/rust-lang/crates.io-index)" = "fcfdefadc3d57ca21cf17990a28ef4c0f7c61383a28cb7604cf4a18e6ede1420"
+checksum = "99c605b9a0adc77b7211c6b1f722dcb613d68d66859a44f3d485a6da332b0598"

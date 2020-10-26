@@ -1,6 +1,6 @@
 [package]
 name = "arc4"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Cody P Schafer <dev@codyps.com>"]
 edition = "2018"
 license = "Apache-2.0 OR MIT"
@@ -14,3 +14,7 @@ categories = ["cryptography", "no-std"]
 
 [dev-dependencies]
 hex-literal = "0.2.1"
+
+[features]
+default = ["std"]
+std = []

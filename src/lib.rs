@@ -1,7 +1,13 @@
-#![no_std]
+#![cfg_attr(not(feature = "std"), no_std)]
+
 use core::num::Wrapping;
+#[cfg(feature = "std")]
+use std::borrow::Cow;
 
 pub struct Arc4<'a> {
+    #[cfg(feature = "std")]
+    key: Cow<'a, [u8]>,
+    #[cfg(not(feature = "std"))]
     key: &'a [u8],
     state: [u8; 256],
 
@@ -10,15 +16,29 @@ pub struct Arc4<'a> {
 }
 
 impl<'a> Arc4<'a> {
-    pub fn with_key(key: &'a [u8]) -> Self {
+    #[cfg(feature = "std")]
+    pub fn with_key(key: impl Into<Cow<'a, [u8]>>) -> Self {
         let mut s = Self {
-            key: key,
+            key: key.into(),
             state: [0; 256],
             i: 0,
             j: 0,
         };
 
-        ksa(&mut s.state, s.key);
+        ksa(&mut s.state, &s.key);
+        s
+    }
+
+    #[cfg(not(feature = "std"))]
+    pub fn with_key(key: &[u8]) -> Self {
+        let mut s = Self {
+            key,
+            state: [0; 256],
+            i: 0,
+            j: 0,
+        };
+
+        ksa(&mut s.state, &s.key);
         s
     }
 
